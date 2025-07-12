@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>test</div>
+    <script type="module">
+      (function () {
+        var script = document.createElement("script");
+        script.src =
+          "https://unpkg.com/web-vitals@5/dist/web-vitals.attribution.iife.js";
+        script.onload = function () {
+          // When loading `web-vitals` using a classic script, all the public
+          // methods can be found on the `webVitals` global namespace.
+          webVitals.onCLS(console.log);
+          webVitals.onINP(console.log);
+          webVitals.onLCP(console.log);
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>
