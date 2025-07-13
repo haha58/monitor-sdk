@@ -1,5 +1,5 @@
 //sdk的参数
-export default config = {
+const config = {
   url: "http://127.0.0.1:8080/api",
   projectName: "eyesdk",
   appId: "123456",
@@ -16,3 +16,4 @@ export function setConfig(options) {
     }
   }
 }
+export default config;

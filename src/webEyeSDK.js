@@ -54,7 +54,7 @@ export function errorBoundary(err, info) {
 // 初始化SDK
 export function init(options) {
   setConfig(options);
-  // performance();
+  performance();
   // error();
   // behavior();
 }
@@ -65,7 +65,7 @@ export default {
   errorBoundary,
   performance,
   error,
-  behavior,
+  behavior,/*  */
   init,
 };
 
