@@ -11,11 +11,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@babel/preset-env": "^7.28.0",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-json": "^6.1.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-json": "^6.1.0"
   }
 }
