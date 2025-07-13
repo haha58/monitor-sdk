@@ -1,7 +1,8 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 // 监听用户点击事件
-export default function click() {
+export default function onClick() {
   ["mousedown", "touchstart"].forEach((eventType) => {
     window.addEventListener(eventType, (e) => {
       const target = e.target;
