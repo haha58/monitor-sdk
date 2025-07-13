@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 export default function observerPaint() {
   const entryHandler = (list) => {
@@ -12,9 +13,10 @@ export default function observerPaint() {
           type: "performance",
           subType: entry.name,
           pageUrl: window.location.href,
+          uuid: generateUniqueId(),
         };
         console.log("reportData", reportData);
-        lazyReportBatch(reportData)
+        lazyReportBatch(reportData);
       }
     }
   };

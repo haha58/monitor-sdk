@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 export default function error() {
   // 捕获资源加载失败的错误： js css  img
@@ -15,6 +16,7 @@ export default function error() {
           html: target.outerHTML,
           pageUrl: window.location.href,
           pahts: e.path,
+          uuid: generateUniqueId(),
         };
         // todo 发送错误信息
         lazyReportBatch(reportData);
@@ -34,6 +36,7 @@ export default function error() {
       stack: error.stack,
       pageUrl: window.location.href,
       startTime: performance.now(),
+      uuid: generateUniqueId(),
     };
     // todo 发送错误信息
     lazyReportBatch(reportData);
@@ -48,6 +51,7 @@ export default function error() {
         reason: e.reason?.stack,
         pageUrl: window.location.href,
         startTime: e.timeStamp,
+        uuid: generateUniqueId(),
       };
       // todo 发送错误信息
       lazyReportBatch(reportData);

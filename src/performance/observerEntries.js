@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 export default function observerEntries() {
   //资源请求时机
@@ -37,6 +38,7 @@ export function observerEvent() {
         transferSize: entry.transferSize, // 请求内容大小
         resourceSize: entry.decodedBodySize, // 资源解压后的大小
         startTime: performance.now(),
+        uuid: generateUniqueId(),
       };
       console.log(entry);
       lazyReportBatch(reportData);

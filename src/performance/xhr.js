@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 export const originalProto = XMLHttpRequest.prototype;
 export const originalSend = originalProto.send;
@@ -26,6 +27,7 @@ function overwriteOpenAndSend() {
         type: "performance",
         success: status >= 200 && status < 300,
         subType: "xhr",
+        uuid: generateUniqueId(),
       };
       // todo 发送数据
       lazyReportBatch(reportData);

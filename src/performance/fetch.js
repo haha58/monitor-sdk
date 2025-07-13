@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 const originalFetch = window.fetch;
 function overwriteFetch() {
@@ -10,6 +11,7 @@ function overwriteFetch() {
       url,
       startTime,
       method: config.method,
+      uuid: generateUniqueId(),
     };
     return originalFetch(url, config)
       .then((res) => {

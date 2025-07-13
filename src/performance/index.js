@@ -1,6 +1,6 @@
 import fetch from "./fetch";
 import observerEntries from "./observerEntries";
-import observerLCP from "./observeLCP";
+import observerLCP from "./observerLCP";
 import observerFCP from "./observerFCP";
 import observerLoad from "./observerLoad";
 import observerPaint from "./observerPaint";

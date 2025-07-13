@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 export default function observerLoad() {
   //当一条会话历史记录被执行的时候将会触发页面显示 (pageshow) 事件。(这包括了后退/前进按钮操作，同时也会在 onload 事件触发后初始化页面时触发)
@@ -11,6 +12,7 @@ export default function observerLoad() {
           subType: type,
           pageUrl: window.location.href,
           startTime: performance.now() - event.timeStamp,
+          uuid: generateUniqueId(),
         };
         lazyReportBatch(reportData)
       });

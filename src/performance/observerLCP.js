@@ -1,4 +1,5 @@
 import { lazyReportBatch } from "../report";
+import { generateUniqueId } from "../utils";
 
 export default function observerLCP() {
   const entryHandler = (list) => {
@@ -13,6 +14,7 @@ export default function observerLCP() {
         type: "performance",
         subType: entry.name,
         pageUrl: window.location.href,
+        uuid: generateUniqueId(),
       };
       // 发送数据 todo;
       lazyReportBatch(reportData);
