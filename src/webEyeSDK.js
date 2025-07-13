@@ -65,7 +65,7 @@ export default {
   errorBoundary,
   performance,
   error,
-  behavior,/*  */
+  behavior,
   init,
 };
 
